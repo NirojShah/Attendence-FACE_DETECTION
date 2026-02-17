@@ -1,19 +1,18 @@
-import { Request, Response } from "express";
+import { RequestHandler } from "express";
 import { UsercontrollerInterface } from "./user.controller.interface";
 
 export class UserController implements UsercontrollerInterface {
-
-  async createUser(req: Request, res: Response): Promise<void> {
+  createUser: RequestHandler = async (req, res) => {
     res.status(201).json({
       status: "success",
-      message: "true warrior"
+      message: "true warrior",
     });
-  }
+  };
 
-  async updateUser(req: Request, res: Response): Promise<void> {
+  updateUser: RequestHandler = async (req, res) => {
     res.status(200).json({
       status: "success",
-      message: "updated"
+      message: "updated",
     });
-  }
+  };
 }

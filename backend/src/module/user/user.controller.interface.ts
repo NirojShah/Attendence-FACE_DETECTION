@@ -1,5 +1,6 @@
-export interface UsercontrollerInterface {
-  createUser(req: Request, res: Response): Promise<void>;
-  updateUser(req: Request, res: Response): Promise<void>;
-}
+import { RequestHandler } from "express";
 
+export interface UsercontrollerInterface {
+  createUser: RequestHandler;
+  updateUser: RequestHandler;
+}
